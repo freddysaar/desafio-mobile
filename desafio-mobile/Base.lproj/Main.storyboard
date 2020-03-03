@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Vitrine-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="desafio_mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Vitrine" id="BYZ-38-t0r" customClass="ViewController" customModule="desafio_mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,11 +20,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEs-k7-a1P" userLabel="TopMenuView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytA-NO-sMG">
+                                                <rect key="frame" x="8" y="33" width="75" height="49"/>
+                                                <state key="normal" title="Categorias"/>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ytA-NO-sMG" firstAttribute="leading" secondItem="vEs-k7-a1P" secondAttribute="leading" constant="8" id="AS6-kX-FKy"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ytA-NO-sMG" secondAttribute="trailing" constant="20" symbolic="YES" id="Nap-ly-wT6"/>
+                                            <constraint firstItem="ytA-NO-sMG" firstAttribute="top" secondItem="vEs-k7-a1P" secondAttribute="top" constant="33" id="f1n-9H-NIk"/>
+                                            <constraint firstAttribute="bottom" secondItem="ytA-NO-sMG" secondAttribute="bottom" constant="8" id="jOD-q1-7op"/>
+                                        </constraints>
                                     </view>
                                     <searchBar contentMode="redraw" placeholder="Pesquisar" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTG-SD-4Vl">
-                                        <rect key="frame" x="0.0" y="85" width="414" height="71"/>
+                                        <rect key="frame" x="0.0" y="90" width="414" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="z9h-Kv-aYu"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -109,10 +124,52 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="FJW-vr-GKf" kind="showDetail" identifier="CategoriasSegue" id="O4B-rX-uhv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+        <!--Categorias-->
+        <scene sceneID="7kB-pW-4Kt">
+            <objects>
+                <viewController title="Categorias" id="FJW-vr-GKf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Y81-HM-IAe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-eX-SLS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-av-iVd">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="802" id="JMM-nQ-sfE"/>
+                                            <constraint firstAttribute="width" constant="414" id="ySN-d5-KZI"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="802" id="07a-Qb-oCl"/>
+                                    <constraint firstAttribute="width" constant="414" id="91J-mt-7pa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cAq-eX-SLS" secondAttribute="bottom" id="0hn-dw-zka"/>
+                            <constraint firstItem="cAq-eX-SLS" firstAttribute="leading" secondItem="Y81-HM-IAe" secondAttribute="leading" id="UnV-Dn-0We"/>
+                            <constraint firstItem="cAq-eX-SLS" firstAttribute="top" secondItem="cPJ-Gb-Ddh" secondAttribute="top" id="WSA-cM-2ad"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cPJ-Gb-Ddh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rS1-Wt-xVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926.08695652173924" y="116.51785714285714"/>
         </scene>
     </scenes>
 </document>

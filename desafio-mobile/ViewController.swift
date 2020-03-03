@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBAction func categoriasButtonPressed(_ sender: AnyObject) {
+        
+        self.performSegue(withIdentifier: "CategoriasSegue", sender:self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        
+        
     }
 
 
