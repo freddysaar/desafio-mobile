@@ -18,35 +18,47 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-
         
         //API Request
         
         let json: [String: Any] = ["Query": "", "Offset": 0, "Size": 10]
         
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        let requestBody = try? JSONSerialization.data(withJSONObject: json)
 
-        
         let url = URL(string: "https://desafio.mobfiq.com.br/Search/Criteria")!
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
-        request.httpBody = jsonData
+        request.httpBody = requestBody
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-            }
+            
+            let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            
+            
+            //print(jsonData!["Products"]!)
+
+            //decode
+            let produto = try? JSONDecoder().decode(Produto.self, from: data)
+
+            let i = 8
+            
+            print("Nome: \(produto!.products[i].name)")
+            print("Preco de Tabela: \(produto!.products[i].skus[0].sellers[0].listPrice)")
+            print("Preco: \(produto!.products[i].skus[0].sellers[0].price)")
+            print("Melhor Opcao de Parcelamento: \(produto!.products[i].skus[0].sellers[0].bestInstallment!.count)")
+            
+            var desconto = 100 * ((produto!.products[i].skus[0].sellers[0].listPrice - produto!.products[i].skus[0].sellers[0].price) / produto!.products[i].skus[0].sellers[0].listPrice)
+            
+            desconto.round()
+            print("Desconto: \(desconto)% OFF")
+            
         }
         task.resume()
-        
-        
-        
         
     }
 
