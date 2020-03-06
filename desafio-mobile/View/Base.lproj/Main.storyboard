@@ -71,6 +71,16 @@
                                                                 <constraint firstAttribute="height" constant="214" id="n3a-6f-wZO"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProdutoNome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QE-13-sz1">
+                                                            <rect key="frame" x="8" y="224" width="184" height="39"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="184" id="51t-UH-Z2Y"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="DY4-bJ-zBf"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PrecoTabela" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDY-3y-ZJv">
                                                             <rect key="frame" x="63.5" y="265" width="73.5" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -92,9 +102,11 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Jr-Tj-C7v" secondAttribute="trailing" constant="33" id="4Oc-rR-mXG"/>
+                                                        <constraint firstItem="0QE-13-sz1" firstAttribute="top" secondItem="30a-ne-2qV" secondAttribute="bottom" constant="2" id="7y7-fD-Scc"/>
                                                         <constraint firstItem="5gA-8t-yRZ" firstAttribute="centerX" secondItem="KDY-3y-ZJv" secondAttribute="centerX" id="8cR-Ni-OHn"/>
                                                         <constraint firstItem="5gA-8t-yRZ" firstAttribute="top" secondItem="KDY-3y-ZJv" secondAttribute="bottom" constant="2" id="C3r-Hm-oOD"/>
                                                         <constraint firstItem="30a-ne-2qV" firstAttribute="leading" secondItem="pxV-y1-voj" secondAttribute="leading" constant="8" id="E8i-Kz-mS4"/>
+                                                        <constraint firstItem="0QE-13-sz1" firstAttribute="leading" secondItem="pxV-y1-voj" secondAttribute="leading" constant="8" id="Gc5-bn-zVd"/>
                                                         <constraint firstItem="KDY-3y-ZJv" firstAttribute="top" secondItem="30a-ne-2qV" secondAttribute="bottom" constant="43" id="HAs-ji-naM"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KDY-3y-ZJv" secondAttribute="trailing" id="SEN-vv-1Ee"/>
                                                         <constraint firstItem="30a-ne-2qV" firstAttribute="top" secondItem="pxV-y1-voj" secondAttribute="top" constant="8" id="dd1-ZF-xdi"/>
@@ -104,7 +116,9 @@
                                                         <constraint firstAttribute="bottom" secondItem="30a-ne-2qV" secondAttribute="bottom" constant="116" id="hsk-f5-UKf"/>
                                                         <constraint firstItem="9Jr-Tj-C7v" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pxV-y1-voj" secondAttribute="leading" constant="33.5" id="iOm-A8-tAQ"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5gA-8t-yRZ" secondAttribute="trailing" constant="57" id="p3h-Jv-US5"/>
+                                                        <constraint firstItem="KDY-3y-ZJv" firstAttribute="top" secondItem="0QE-13-sz1" secondAttribute="bottom" constant="2" id="ptG-t8-Yy4"/>
                                                         <constraint firstItem="KDY-3y-ZJv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pxV-y1-voj" secondAttribute="leading" id="rde-b3-61f"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0QE-13-sz1" secondAttribute="trailing" constant="8" id="uBp-As-IKa"/>
                                                         <constraint firstItem="5gA-8t-yRZ" firstAttribute="centerX" secondItem="9Jr-Tj-C7v" secondAttribute="centerX" id="y28-Qh-JYr"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
@@ -136,7 +150,7 @@
         <scene sceneID="7kB-pW-4Kt">
             <objects>
                 <viewController title="Categorias" id="FJW-vr-GKf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Y81-HM-IAe">
+                    <view key="view" contentMode="scaleToFill" id="Y81-HM-IAe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
