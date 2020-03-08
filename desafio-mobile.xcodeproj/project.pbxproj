@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F0292DC2411C2CA006BCAD6 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0292DB2411C2CA006BCAD6 /* Produto.swift */; };
+		1FA3643E2414437100C7216C /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA3643D2414437100C7216C /* ProductCollectionViewCell.swift */; };
 		1FBFF385240AB76400A21D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF384240AB76300A21D12 /* AppDelegate.swift */; };
 		1FBFF387240AB76400A21D12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF386240AB76400A21D12 /* SceneDelegate.swift */; };
 		1FBFF389240AB76400A21D12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF388240AB76400A21D12 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1F0292DB2411C2CA006BCAD6 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
+		1FA3643D2414437100C7216C /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FBFF381240AB76300A21D12 /* desafio-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBFF384240AB76300A21D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBFF386240AB76400A21D12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBFF388240AB76400A21D12 /* ViewController.swift */,
+				1FA3643D2414437100C7216C /* ProductCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				1FBFF389240AB76400A21D12 /* ViewController.swift in Sources */,
 				1FBFF385240AB76400A21D12 /* AppDelegate.swift in Sources */,
+				1FA3643E2414437100C7216C /* ProductCollectionViewCell.swift in Sources */,
 				1FBFF387240AB76400A21D12 /* SceneDelegate.swift in Sources */,
 				1F0292DC2411C2CA006BCAD6 /* Produto.swift in Sources */,
 			);
