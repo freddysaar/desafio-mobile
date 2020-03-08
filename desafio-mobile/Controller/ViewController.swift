@@ -45,12 +45,6 @@ class ViewController: UIViewController {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
-            
-//            let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            
-            
-            //print(jsonData!["Products"]!)
-
             //decode
             let produto = try? JSONDecoder().decode(Produto.self, from: data)
 
@@ -82,6 +76,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        
+        let produtoImagem = URL(string: productList[indexPath.item].skus[0].images[0].imageURL)
         let produtoNome = productList[indexPath.item].skus[0].name
         let preco = productList[indexPath.item].skus[0].sellers[0].price
         let precoDeTabela = productList[indexPath.item].skus[0].sellers[0].listPrice
@@ -91,35 +87,45 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         var melhorParcelamento = ""
         
         if((parcelas != nil) && (parcelasValor != nil)){
-            melhorParcelamento = String(format: "\(parcelas!)x de R$$%,02f", parcelasValor!)
+            melhorParcelamento = String(format: "\(parcelas!)x de R$$%.02f", parcelasValor!)
         }
         
         if(preco != precoDeTabela) {
             let desconto = 100 * ((precoDeTabela - preco) / precoDeTabela)
             cell.produtoDesconto.text = String("\(Int(desconto.rounded()))% OFF")
-            cell.produtoPrecoFinal.text = String(format: "R$$%,02f", preco)
-            cell.produtoPrecoTabela.text = String(format: "R$$%,02f", precoDeTabela)
+            cell.produtoPrecoTabela.text = String(format: "R$%.02f", precoDeTabela)
+            cell.produtoPrecoTabela.isHidden = false
+            cell.produtoDesconto.isHidden = false
         } else {
-            cell.produtoParcelamento.isHidden = true
             cell.produtoPrecoTabela.isHidden = true
             cell.produtoDesconto.isHidden = true
         }
+        
         if(melhorParcelamento == "") {
             cell.produtoParcelamento.isHidden = true
         }
-
         
+        if(produtoImagem != nil){
+            cell.produtoImagem.load(url: produtoImagem!)
+        }
         cell.produtoNome.text = produtoNome
-        cell.produtoPrecoFinal.text = String(format: "R$ $%.02f", preco)
+        cell.produtoPrecoFinal.text = String(format: "R$%.02f", preco)
         cell.produtoParcelamento.text = melhorParcelamento
         
-        
-
         return cell
     }
-    
-    
-    
-    
 }
 
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
