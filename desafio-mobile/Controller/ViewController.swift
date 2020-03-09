@@ -22,8 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         self.vitrineCollectionView.delegate = self
         self.vitrineCollectionView.dataSource = self
         
@@ -51,17 +50,13 @@ class ViewController: UIViewController {
             self.productList = produto?.products ?? []
             
             
-            //refazer collection view depois da requisicao completa
+            //refaz collection view depois da requisicao completa
             DispatchQueue.main.async {
                 self.vitrineCollectionView.reloadData()
             }
-
-            
         }
         task.resume()
-        
     }
-
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {

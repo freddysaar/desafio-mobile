@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1F0292DC2411C2CA006BCAD6 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0292DB2411C2CA006BCAD6 /* Produto.swift */; };
+		1F29A4752415C6CA00BB97AB /* CategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29A4742415C6CA00BB97AB /* CategoriasViewController.swift */; };
+		1F29A4792415CE8800BB97AB /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29A4782415CE8800BB97AB /* Categoria.swift */; };
+		1F29A47B2415CFA800BB97AB /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29A47A2415CFA800BB97AB /* APIRequestManager.swift */; };
+		1F29A47D2415D7B900BB97AB /* CategoriaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F29A47C2415D7B900BB97AB /* CategoriaViewCell.swift */; };
 		1FA3643E2414437100C7216C /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA3643D2414437100C7216C /* ProductCollectionViewCell.swift */; };
 		1FBFF385240AB76400A21D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF384240AB76300A21D12 /* AppDelegate.swift */; };
 		1FBFF387240AB76400A21D12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFF386240AB76400A21D12 /* SceneDelegate.swift */; };
@@ -19,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		1F0292DB2411C2CA006BCAD6 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
+		1F29A4742415C6CA00BB97AB /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
+		1F29A4782415CE8800BB97AB /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
+		1F29A47A2415CFA800BB97AB /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		1F29A47C2415D7B900BB97AB /* CategoriaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaViewCell.swift; sourceTree = "<group>"; };
 		1FA3643D2414437100C7216C /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FBFF381240AB76300A21D12 /* desafio-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBFF384240AB76300A21D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				1F0292DB2411C2CA006BCAD6 /* Produto.swift */,
+				1F29A4782415CE8800BB97AB /* Categoria.swift */,
+				1F29A47A2415CFA800BB97AB /* APIRequestManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -62,6 +72,8 @@
 			children = (
 				1FBFF388240AB76400A21D12 /* ViewController.swift */,
 				1FA3643D2414437100C7216C /* ProductCollectionViewCell.swift */,
+				1F29A4742415C6CA00BB97AB /* CategoriasViewController.swift */,
+				1F29A47C2415D7B900BB97AB /* CategoriaViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,9 +180,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F29A47B2415CFA800BB97AB /* APIRequestManager.swift in Sources */,
 				1FBFF389240AB76400A21D12 /* ViewController.swift in Sources */,
 				1FBFF385240AB76400A21D12 /* AppDelegate.swift in Sources */,
+				1F29A4792415CE8800BB97AB /* Categoria.swift in Sources */,
+				1F29A4752415C6CA00BB97AB /* CategoriasViewController.swift in Sources */,
 				1FA3643E2414437100C7216C /* ProductCollectionViewCell.swift in Sources */,
+				1F29A47D2415D7B900BB97AB /* CategoriaViewCell.swift in Sources */,
 				1FBFF387240AB76400A21D12 /* SceneDelegate.swift in Sources */,
 				1F0292DC2411C2CA006BCAD6 /* Produto.swift in Sources */,
 			);
